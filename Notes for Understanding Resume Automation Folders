@@ -1,0 +1,38 @@
+Notes for Understanding Resume Automation Folders
+
+
+
+	Resume Automation
+Original attempt that tried to use an online service that did the text replacement and pdf exporting.
+Think it didn't work cos some issue with API and/or I didn't understand it - lack of documentation?
+Think test3.py is where I tried using this Python wrapper for Applescript but don't think it worked cos that code is quite old (not updated).
+
+
+"Resume Automation 2" & "Resume Automation VScode" go intandem whereby the VScode folder is for writing and managing the JSX code and debugging. I recall, and noted, not being able to use the official Extend Script debugger by Adobe cos unsupported with my Mac - Adobe made a useable deugger (VScode extension) so went with that [cbf remembering exact explanation why]. So all extend script work happened in there.
+
+This is where I tried automating InDesign. I went with executing ExtendScript via Applescript. ES is a ECMA/Javascript-based (vs 3 or 4?) language made by Adobe for automating their products - it's old, not really supported, and barely anyone uses it these days (atleast when trying to learn online); making working with it hell. I don't remember the exact reason for the AppleScript part but I needed something to automatically execute the ES code plus was learning AS at the time - may've been the only way. Yes, one had to learn some old Javascript in a modern programme.
+
+
+	Resume Automation 2
+The management of the system is done in Python [first.py]. It isn't the most elegant way but I wanted to execute the idea asap at the time! Although the details escape me (writing this all atleast a year and three mths later), I had a lot of trouble trying to pass arguements between AS & ES - perhaps that's why I brought in Python? I ended-up executing the AS [cover-letters.jsx] as a terminal command via Python which proved to be flexible (when experimenting with ideas). The Python still managed to capture and manage errors created by the ExtendScript or Applescript systems!
+
+jobs.csv served two purposes (which wasn't good practice but oh well). The Seek URLs are copied into this file then it's overwritten with the extracted keywords, which is fed into InDesign. 
+
+Quick note: Some of the code needs to change to work on Windows. I never got to that part.
+
+
+	Resume Automation VScode
+This is where I wrote and tested the ES code. The file names are just major changes in the code/implimentation of the idea - based on a cursory diffcheck, the latest version is actually in the 'Resume Automation 2' folder. jobs.csv shows what the keywords looked like (once fetched) for feeding into InDesign. Although the relevant file is in the other folder, it makes sense to explain lines here:
+	* [1-5]	Opens InDesign template, configures export settings, brings in arguments from AppleScript
+
+	* extractJobList Function: reads jobs.csv (remember, after URls were converted to keywords), convert to nested (ie. paired) array
+		- [20]	Count lines for upcoming loop, and making splitting easier
+			[21-22] can be ignored
+		- [26]	Split each line into pairs (ie. separate strings), then keep together as nested array
+
+	* [44]	Keywords used in InDesign template file
+
+	* [53-54]	Clear settings prior next loop. This loop just finds every placeholder spot and replaces it with the keyword
+		- There's almost identical loop at [65]. Recall one is for changing all mentions of "OPENING" and the other for "COMPANY". Can't exactly recall why they needed to be separated like this before repeating for the next cover letter file export...
+
+	* 63	Exports currently edited template as PDF. Don't remember purpose of 'false' parametre and cbf finding documentation.

@@ -1,0 +1,36 @@
+on run argv
+tell application "/Applications/Adobe InDesign 2021/Adobe InDesign 2021.app"
+activate
+do script "/Volumes/GoogleDrive/My Drive/_Life/Work/Resumes/Resume 9.x/Resume 9.1/Resume Automation VScode/third.jsx"  language javascript with arguments argv
+end tell
+end run
+
+
+
+osascript \
+  -e "on run(argv)" \
+  -e "tell application '/Applications/Adobe InDesign 2021/Adobe InDesign 2021.app'" \
+  -e "activate" \
+  -e "do script '/Volumes/GoogleDrive/My Drive/_Life/Work/Resumes/Resume 9.x/Resume 9.1/Resume Automation VScode/third.jsx'  language javascript with arguments argv" \
+  -e "end tell" \
+  -e "end" \
+  -- "$var2"
+
+
+  osascript \
+  -e "on run(argv)" \
+  -e "return display notification item 1 of argv" \
+  -e "end" \
+  -- "$var2"
+
+    osascript -e "on run(argv)" -e "return display notification item 1 of argv" -e "end" -- "$var2"
+
+  copy "Hello World!" to stdout
+
+
+osascript \
+-e "on run(argv)" \
+-e "return display notification item 1 of argv" \
+-e "end" \
+-e "copy 'Hello World!' to stdout" \
+-- "$var2"
