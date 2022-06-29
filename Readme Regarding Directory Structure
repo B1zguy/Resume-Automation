@@ -1,0 +1,10 @@
+Readme Regarding Directory Structure
+
+This folder just brings together (ie. points to original location, but not hard/symlinks) the original project folders w/o moving/copying them - using bindfs.
+
+	The Commands
+bindfs '/Volumes/GoogleDrive/My Drive/_Life/Work/Resumes/Resume 9.x/Resume 9.1/Resume Automation 2' '/Volumes/GoogleDrive/My Drive/_Pro To The Jects/Dev Playground/Resume Automation/Resume Automation 2'
+
+bindfs '/Volumes/GoogleDrive/My Drive/_Life/Work/Resumes/Resume 9.x/Resume 9.1/Resume Automation VScode' '/Volumes/GoogleDrive/My Drive/_Pro To The Jects/Dev Playground/Resume Automation/Resume Automation VScode'
+
+I wanted to track them as 'one project' to showcase on Github.
