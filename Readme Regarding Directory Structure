@@ -8,3 +8,7 @@ bindfs '/Volumes/GoogleDrive/My Drive/_Life/Work/Resumes/Resume 9.x/Resume 9.1/R
 bindfs '/Volumes/GoogleDrive/My Drive/_Life/Work/Resumes/Resume 9.x/Resume 9.1/Resume Automation VScode' '/Volumes/GoogleDrive/My Drive/_Pro To The Jects/Dev Playground/Resume Automation/Resume Automation VScode'
 
 I wanted to track them as 'one project' to showcase on Github.
+
+
+	For Running:
+bindfs '/Volumes/GoogleDrive/My Drive/_Life/Work/Resumes/Resume 9.x/Resume 9.1/Resume Automation 2' '/Volumes/GoogleDrive/My Drive/_Pro To The Jects/Dev Playground/Resume Automation/Resume Automation 2' && bindfs '/Volumes/GoogleDrive/My Drive/_Life/Work/Resumes/Resume 9.x/Resume 9.1/Resume Automation VScode' '/Volumes/GoogleDrive/My Drive/_Pro To The Jects/Dev Playground/Resume Automation/Resume Automation VScode'
